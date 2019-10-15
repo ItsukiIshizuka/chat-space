@@ -1,6 +1,5 @@
 class GroupsController < ApplicationController
-  before_action 
-  :set_group, only: %i[update]
+  before_action :set_group, only: %i[update]
 
   def index
   end
