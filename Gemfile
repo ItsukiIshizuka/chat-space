@@ -54,7 +54,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'haml-rails'
 gem "font-awesome-rails"
-
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'devise'
 
 group :development do 
@@ -64,3 +65,4 @@ end
 group :production do 
   gem 'unicorn'
 end
+
