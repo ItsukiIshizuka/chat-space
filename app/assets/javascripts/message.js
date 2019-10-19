@@ -47,7 +47,7 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.message').append(html)
+      $('.message_main').append(html)
       $('.form__message').val('')
     })
     .fail(function(){
