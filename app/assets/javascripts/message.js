@@ -32,6 +32,8 @@ $(function(){
     return html;
   }
 
+  $('.message_main').animate({ scrollTop: $('.message_main')[0].scrollHeight}); //サイト開くと一番下
+
 
   $('.new_message').on('submit', function(e){
     e.preventDefault();
@@ -53,5 +55,6 @@ $(function(){
     .fail(function(){
       alert('error');
     })
+    $('.message_main').animate({ scrollTop: $('.message_main')[0].scrollHeight}, 2000, 'swing');
   })
 });
