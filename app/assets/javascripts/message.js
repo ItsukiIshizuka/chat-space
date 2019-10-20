@@ -44,7 +44,7 @@ $(function() {
       scroll();
       let html = buildHTML(data);
       $('.message_main').append(html)
-      $('.form__message').val('')
+      $('form')[0].reset();
     })
     .fail(function(){
       alert('error');
