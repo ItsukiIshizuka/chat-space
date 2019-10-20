@@ -19,6 +19,9 @@
       / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときにも使用します
       .chat-group-form__search.clearfix
         %input#user-search-field.chat-group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
+      
+      / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
+      /= f.collection_check_boxes :user_ids, User.all, :id, :name
   .chat-group-form__field
     .chat-group-form__field--left
     .chat-group-form__field--right
