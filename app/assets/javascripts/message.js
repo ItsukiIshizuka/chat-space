@@ -1,4 +1,4 @@
-$(function(){
+$(function() {
   function buildHTML(message){
 
     if(message.content == null){
@@ -10,9 +10,9 @@ $(function(){
     }
 
     if(message.image !== null){
-      var image = ``
+      var image = ``;
     }else {
-      var image = `<img class="lower-message__image" src=${message.image.url}>`
+      var image = `<img class="lower-message__image" src=${message.image.url}>`;
     }
 
     var html = `<div class='message'>
@@ -30,10 +30,12 @@ $(function(){
                   </div>
                 </div>`
     return html;
-  }
+  };
 
-  $('.message_main').animate({ scrollTop: $('.message_main')[0].scrollHeight}); //サイト開くと一番下
-
+  function scroll(){
+    $('.message_main').animate({ scrollTop: $('.message_main')[0].scrollHeight}, 1000, 'linear'); //サイト開くと一番下
+  };
+  scroll();
 
   $('.new_message').on('submit', function(e){
     e.preventDefault();
@@ -48,6 +50,7 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      scroll();
       let html = buildHTML(data);
       $('.message_main').append(html)
       $('.form__message').val('')
@@ -55,6 +58,8 @@ $(function(){
     .fail(function(){
       alert('error');
     })
-    $('.message_main').animate({ scrollTop: $('.message_main')[0].scrollHeight}, 2000, 'swing');
   })
+
+  $('.form__submit').removeAttr('data-disable-with')
+
 });
