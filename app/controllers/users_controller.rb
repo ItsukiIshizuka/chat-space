@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def index
+    @users = User.where('name LIKE(?) and id != ?', "%#{params[:input]}%", "#{current_user.id}").limit(20)
     respond_to do |format|
       format.html
       format.json
