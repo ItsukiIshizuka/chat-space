@@ -47,9 +47,7 @@ $(function() {
     })
     .fail(function(){
       alert('error');
-    })
-  })
-
-  $('.form__submit').removeAttr('data-disable-with')
-
+    });
+  });
+  $('.form__submit').removeAttr('data-disable-with');
 });
