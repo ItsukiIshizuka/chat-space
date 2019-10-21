@@ -1,3 +1,4 @@
+
 $(function() {
   var search_result = $("#user-search-result");
 
@@ -47,7 +48,7 @@ $(function() {
     
   });
 
-  $(document).on("click", ".chat-group-user__btn--add", function (e) {
+  $('.chat-group-form__field--right').on("click", ".chat-group-user__btn--add", function (e) {
     var user = e.target;
     name = $(user).attr('data-user-name');
     id = $(user).attr('data-user-id');
@@ -62,13 +63,13 @@ $(function() {
               `
       $('.chat-group-users.js-add-user').append(html)
     };
-
-    $(document).on("click", ".js-remove-btn", function () {
-      var user = $(this).parent();
-      user.remove();
-    });
     
     appendAddUser(name, id);
+    var user = $(this).parent();
+    user.remove();
+  });
+  
+  $('.chat-group-form__field--right').on("click", ".js-remove-btn", function () {
     var user = $(this).parent();
     user.remove();
   });
