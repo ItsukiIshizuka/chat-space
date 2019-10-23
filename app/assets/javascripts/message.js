@@ -72,7 +72,7 @@ $(function() {
           scroll();
       })
       .fail(function() {
-        alert.log('error');
+        alert('error');
       });
     };
   };
