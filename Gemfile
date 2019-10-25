@@ -80,3 +80,6 @@ group :production do
 end
 
 gem 'rails-i18n'
+
+#画像アップロード補助
+gem 'fog-aws'
